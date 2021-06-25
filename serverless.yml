@@ -1,0 +1,67 @@
+---
+service: serverless-nodejs
+
+frameworkVersion: '^2.38.0'
+
+variablesResolutionMode: 20210219
+configValidationMode: error
+
+disabledDeprecations:
+  - CLI_OPTIONS_SCHEMA
+
+plugins:
+  - serverless-domain-manager
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: ${env:AWS_DEFAULT_REGION, 'us-east-1'}
+  stage: stg
+  logRetentionInDays: 30
+  apiGateway:
+    shouldStartNameWithService: true
+  eventBridge:
+    useCloudFormation: true
+  lambdaHashingVersion: 20201221
+  environment:
+    NODE_ENV: production
+
+custom:
+  domain: makenew.razorx.app
+  customDomain:
+    domainName: ${sls:stage}.${self:service}.${self:custom.domain}
+    endpointType: regional
+    createRoute53Record: true
+
+package:
+  individually: true
+  patterns:
+    - '!*/**.spec.js'
+    - '!.editorconfig'
+    - '!.eslintrc.json'
+    - '!.github/**'
+    - '!.gitignore'
+    - '!.nvmrc'
+    - '!.nyc_output/**'
+    - '!.nycrc.json'
+    - '!.prettierrc.json'
+    - '!CHANGELOG.md'
+    - '!README.md'
+    - '!ava.config.json'
+    - '!coverage/**'
+    - '!examples/**'
+    - '!fixtures/**'
+    - '!makenew.sh'
+    - '!nodemon.json'
+    - '!serverless.yml'
+    - '!test/**'
+    - '!yarn.lock'
+
+functions:
+  todo:
+    handler: handlers/todo.handler
+    events:
+      - http:
+          method: get
+          path: /todo
