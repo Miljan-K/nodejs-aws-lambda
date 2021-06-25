@@ -1,7 +1,7 @@
 # Serverless Node.js Project
 
-[![npm](https://img.shields.io/npm/v/@makenew/serverless-nodejs.svg)](https://www.npmjs.com/package/@makenew/serverless-nodejs)
-[![GitHub Actions](https://github.com/makenew/serverless-nodejs/workflows/main/badge.svg)](https://github.com/makenew/serverless-nodejs/actions)
+[![npm](https://img.shields.io/npm/v/@makenew/nodejs-aws-lambda.svg)](https://www.npmjs.com/package/@makenew/nodejs-aws-lambda)
+[![GitHub Actions](https://github.com/makenew/nodejs-aws-lambda/workflows/main/badge.svg)](https://github.com/makenew/nodejs-aws-lambda/actions)
 
 Package skeleton for a Node.js Serverless project on AWS Lambda.
 
@@ -48,7 +48,7 @@ Bootstrap a new Node.js Serverless project in five minutes or less.
 1. Create an empty (**non-initialized**) repository on GitHub.
 2. Clone the master branch of this repository with
    ```
-   $ git clone --single-branch git@github.com:makenew/serverless-nodejs.git <new-node-lib>
+   $ git clone --single-branch git@github.com:makenew/nodejs-aws-lambda.git <new-node-lib>
    $ cd <new-node-lib>
    ```
    Optionally, reset to the latest version with
@@ -80,7 +80,7 @@ Bootstrap a new Node.js Serverless project in five minutes or less.
 7. Ensure a valid certificate exists in [AWS Certificate Manager]
    that matches the custom deployment domains,
    e.g., this project uses a wildcard certificate for
-   `*.serverless-nodejs.makenew.razorx.app`.
+   `*.nodejs-aws-lambda.makenew.razorx.app`.
    Then trigger a deploy to the stg stage with
    ```
    $ yarn run release:staging
@@ -96,7 +96,7 @@ you can fetch and merge in changes from this repository.
 Add this as a new remote with
 
 ```
-$ git remote add upstream git@github.com:makenew/serverless-nodejs.git
+$ git remote add upstream git@github.com:makenew/nodejs-aws-lambda.git
 ```
 
 You can then fetch and merge changes with
@@ -112,20 +112,20 @@ Note that `CHANGELOG.md` is just a template for this skeleton.
 The actual changes for this project are documented in the commit history
 and summarized under [Releases].
 
-[Releases]: https://github.com/makenew/serverless-nodejs/releases
+[Releases]: https://github.com/makenew/nodejs-aws-lambda/releases
 
 ## Installation
 
 Add this as a dependency to your project using [npm] with
 
 ```
-$ npm install @makenew/serverless-nodejs
+$ npm install @makenew/nodejs-aws-lambda
 ```
 
 or using [Yarn] with
 
 ```
-$ yarn add @makenew/serverless-nodejs
+$ yarn add @makenew/nodejs-aws-lambda
 ```
 
 [npm]: https://www.npmjs.com/
@@ -136,8 +136,8 @@ $ yarn add @makenew/serverless-nodejs
 ### Quickstart
 
 ```
-$ git clone https://github.com/makenew/serverless-nodejs.git
-$ cd serverless-nodejs
+$ git clone https://github.com/makenew/nodejs-aws-lambda.git
+$ cd nodejs-aws-lambda
 $ nvm install
 $ yarn install
 ```
@@ -162,10 +162,10 @@ The [source code] is hosted on GitHub.
 Clone the project with
 
 ```
-$ git clone git@github.com:makenew/serverless-nodejs.git
+$ git clone git@github.com:makenew/nodejs-aws-lambda.git
 ```
 
-[source code]: https://github.com/makenew/serverless-nodejs
+[source code]: https://github.com/makenew/nodejs-aws-lambda
 
 ### Requirements
 
@@ -204,7 +204,7 @@ Publishing may be triggered using on the web
 using a [version workflow_dispatch on GitHub Actions].
 
 [npm-version]: https://docs.npmjs.com/cli/version
-[version workflow_dispatch on GitHub Actions]: https://github.com/makenew/serverless-nodejs/actions?query=workflow%3Aversion
+[version workflow_dispatch on GitHub Actions]: https://github.com/makenew/nodejs-aws-lambda/actions?query=workflow%3Aversion
 
 ### Deployment
 
@@ -222,7 +222,7 @@ Deployment may be triggered using on the web
 using a [release workflow_dispatch on GitHub Actions].
 
 [npm-version]: https://docs.npmjs.com/cli/version
-[release workflow_dispatch on GitHub Actions]: https://github.com/makenew/serverless-nodejs/actions?query=workflow%3Arelease
+[release workflow_dispatch on GitHub Actions]: https://github.com/makenew/nodejs-aws-lambda/actions?query=workflow%3Arelease
 
 ## GitHub Actions
 
@@ -254,33 +254,3 @@ Set these additional secrets to enable the action:
 
 [GitHub Actions]: https://github.com/features/actions
 [GPG private key]: https://github.com/marketplace/actions/import-gpg#prerequisites
-
-## Contributing
-
-Please submit and comment on bug reports and feature requests.
-
-To submit a patch:
-
-1. Fork it (https://github.com/makenew/serverless-nodejs/fork).
-2. Create your feature branch (`git checkout -b my-new-feature`).
-3. Make changes.
-4. Commit your changes (`git commit -am 'Add some feature'`).
-5. Push to the branch (`git push origin my-new-feature`).
-6. Create a new Pull Request.
-
-## License
-
-This Serverless project is licensed under the MIT license.
-
-## Warranty
-
-This software is provided by the copyright holders and contributors "as is" and
-any express or implied warranties, including, but not limited to, the implied
-warranties of merchantability and fitness for a particular purpose are
-disclaimed. In no event shall the copyright holder or contributors be liable for
-any direct, indirect, incidental, special, exemplary, or consequential damages
-(including, but not limited to, procurement of substitute goods or services;
-loss of use, data, or profits; or business interruption) however caused and on
-any theory of liability, whether in contract, strict liability, or tort
-(including negligence or otherwise) arising in any way out of the use of this
-software, even if advised of the possibility of such damage.
